@@ -534,7 +534,7 @@
     "welcome": "欢迎回来",
     "welcomeBonus": {
       "title": "🎉 欢迎加入 Sistine!",
-      "message": "恭喜您成功注册！我们已为您的账户赠送 300 积分新人礼包。",
+      "message": "恭喜您成功注册！我们已为您的账户赠送 20 分钟免费转录（20 积分）。",
       "description": "这些积分可用于体验我们的 AI 对话、图像生成、视频生成等功能。",
       "ctaButton": "立即体验",
       "dismissButton": "知道了"

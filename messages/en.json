@@ -534,7 +534,7 @@
     "welcome": "Welcome back",
     "welcomeBonus": {
       "title": "🎉 Welcome to Sistine!",
-      "message": "Congratulations on your successful registration! We've added 300 credits welcome bonus to your account.",
+      "message": "Congratulations on your successful registration! We've added 20 free minutes of transcription (20 credits) to your account.",
       "description": "Use these credits to try our AI chat, image generation, video generation, and more features.",
       "ctaButton": "Try Now",
       "dismissButton": "Got it"
