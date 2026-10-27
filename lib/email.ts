@@ -22,7 +22,7 @@ const getDefaultFromEmail = () => {
   }
   
   // 4. 使用配置的域名和应用名称
-  const appName = process.env.NEXT_PUBLIC_APP_NAME || 'Sistine AI';
+  const appName = process.env.NEXT_PUBLIC_APP_NAME || 'TapeScript';
   const fromName = process.env.RESEND_FROM_NAME || appName;
   return `${fromName} <noreply@${process.env.RESEND_VERIFIED_DOMAIN}>`;
 };

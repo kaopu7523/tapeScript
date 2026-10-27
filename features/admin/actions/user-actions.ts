@@ -1,10 +1,11 @@
 "use server";
 
 import { db } from "@/lib/db";
-import { user } from "@/lib/db/schema";
+import { user, creditLedger } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { isAdmin } from "@/lib/auth/admin";
 import { revalidatePath } from "next/cache";
+import { randomUUID } from "crypto";
 
 export async function updateUserRole(userId: string, newRole: string) {
   // 检查权限
@@ -60,16 +61,31 @@ export async function updateUserCredits(userId: string, credits: number) {
     throw new Error("Credits cannot be negative");
   }
 
-  // 更新用户积分
-  await db
-    .update(user)
-    .set({ 
-      credits,
-      updatedAt: new Date()
-    })
-    .where(eq(user.id, userId));
+  // 更新用户积分，并把差额记入积分账本
+  await db.transaction(async (tx) => {
+    const [current] = await tx
+      .select({ credits: user.credits })
+      .from(user)
+      .where(eq(user.id, userId));
+    if (!current) {
+      throw new Error(`User not found: ${userId}`);
+    }
 
-  // TODO: 可以在这里添加积分变更日志到 creditLedger 表
+    await tx
+      .update(user)
+      .set({ credits, updatedAt: new Date() })
+      .where(eq(user.id, userId));
+
+    const delta = credits - current.credits;
+    if (delta !== 0) {
+      await tx.insert(creditLedger).values({
+        id: randomUUID(),
+        userId,
+        delta,
+        reason: "admin_adjustment",
+      });
+    }
+  });
 
   revalidatePath("/admin/users");
   return { success: true };

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { FeaturedTestimonials } from "@/components/featured-testimonials";
 import { cn } from "@/lib/utils";
 import { HorizontalGradient } from "@/components/horizontal-gradient";
-import { ContactForm } from "@/features/marketing/components/contact-form";
+import { websiteConfig } from "@/constants/website";
 import { getTranslations } from 'next-intl/server';
 import type { Locale } from "@/i18n.config";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -41,7 +41,16 @@ export default async function ContactPage(
     <div className="relative overflow-hidden py-20 md:py-0 px-4 md:px-20 bg-background">
       <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 relative overflow-hidden">
         <Background />
-        <ContactForm />
+        <div className="relative z-20 flex flex-col justify-center gap-4 py-10 md:pr-10">
+          <h1 className="text-3xl font-semibold text-foreground">{t('title')}</h1>
+          <p className="text-muted-foreground">{t('subtitle')}</p>
+          <p className="text-foreground">
+            {t('emailLabel')}{" "}
+            <a className="font-medium underline" href={`mailto:${websiteConfig.supportEmail}`}>
+              {websiteConfig.supportEmail}
+            </a>
+          </p>
+        </div>
         <div className="relative w-full z-20 hidden md:flex border-l border-border overflow-hidden bg-background items-center justify-center">
           <div className="max-w-sm mx-auto">
             <FeaturedTestimonials />

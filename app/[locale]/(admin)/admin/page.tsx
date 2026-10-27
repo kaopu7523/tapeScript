@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { user, payment, chatSession, creditLedger } from "@/lib/db/schema";
+import { user, payment, creditLedger } from "@/lib/db/schema";
 import { sql } from "drizzle-orm";
 import { AdminDashboard } from "@/features/admin/components/admin-dashboard";
 
@@ -10,7 +10,6 @@ export default async function AdminPage() {
     activeUsers,
     totalPayments,
     totalRevenue,
-    totalChats,
     totalCreditsUsed
   ] = await Promise.all([
     // 总用户数
@@ -26,9 +25,6 @@ export default async function AdminPage() {
     // 总收入（分）
     db.select({ total: sql<number>`COALESCE(sum(${payment.amountCents}), 0)` }).from(payment)
       .where(sql`${payment.status} = 'succeeded'`),
-    
-    // 总对话数
-    db.select({ count: sql<number>`count(*)` }).from(chatSession),
     
     // 总积分消耗
     db.select({ total: sql<number>`COALESCE(sum(abs(${creditLedger.delta})), 0)` })
@@ -72,7 +68,6 @@ export default async function AdminPage() {
     activeUsers: activeUsers[0].count,
     totalPayments: totalPayments[0].count,
     totalRevenue: totalRevenue[0].total / 100, // 转换为元
-    totalChats: totalChats[0].count,
     totalCreditsUsed: totalCreditsUsed[0].total,
   };
 

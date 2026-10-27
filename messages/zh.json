@@ -39,12 +39,7 @@
       "pricing": "定价",
       "blog": "博客",
       "contact": "联系我们",
-      "docs": "文档",
       "dashboard": "仪表盘",
-      "demo": "Demo",
-      "chat": "对话",
-      "image": "图片",
-      "video": "视频",
       "credits": "积分管理",
       "profile": "个人资料",
       "settings": "设置"
@@ -384,176 +379,6 @@
       "signOutLink": "退出并使用其他账户"
     }
   },
-  "demo": {
-    "badge": "先试后买",
-    "title": "体验 Sistine AI",
-    "description": "无需注册即可测试我们强大的 AI 功能。获得 3 次免费试用机会，探索我们的能力。",
-    "limitReached": "您已达到演示限制。立即注册以继续使用完整功能的 AI 工具！",
-    "signUpNow": "立即注册",
-    "tryNow": "立即试用",
-    "backToFeatures": "返回功能列表",
-    "send": "发送",
-    "generate": "生成",
-    "usageInfo": "已使用 {used}/{max} 次",
-    "demoNote": "这是演示预览。实际效果会更好！",
-    "responses": {
-      "chat": "这是对 \"{query}\" 的演示回复。在完整版本中，您将获得由先进语言模型驱动的智能 AI 响应。"
-    },
-    "features": {
-      "chat": {
-        "title": "AI 聊天助手",
-        "description": "与我们的 AI 进行智能对话。提问、寻求帮助或只是聊天！",
-        "placeholder": "开始对话...",
-        "inputPlaceholder": "输入您的消息..."
-      },
-      "image": {
-        "title": "AI 图像生成",
-        "description": "使用最先进的 AI 模型从文本描述创建惊艳的图像。",
-        "inputPlaceholder": "描述您想要创建的图像..."
-      },
-      "video": {
-        "title": "AI 视频创作",
-        "description": "使用我们先进的 AI 技术从文本提示生成专业视频。",
-        "inputPlaceholder": "描述您想要创建的视频..."
-      }
-    },
-    "cta": {
-      "title": "准备好完整体验了吗？",
-      "description": "解锁无限 AI 生成、高级功能和优先支持。",
-      "signUp": "开始免费试用",
-      "viewPricing": "查看定价"
-    },
-    "subtitle": "无需登录即可体验真实的产品演示界面。",
-    "credits": "积分",
-    "backToDashboard": "返回控制台",
-    "insufficientCredits": "积分不足",
-    "startChat": "开始对话",
-    "startChatDescription": "随便问点什么，看看助手能做些什么。",
-    "sendHint": "按 Enter 键发送",
-    "tabs": {
-      "chat": "对话",
-      "image": "图像",
-      "video": "视频"
-    },
-    "chat": {
-      "title": "AI 对话体验",
-      "description": "体验助手的流式回复效果。",
-      "placeholder": "输入你的消息..."
-    },
-    "image": {
-      "title": "图像生成",
-      "description": "上传参考图片并描述你想要的修改效果。",
-      "placeholder": "描述你想如何修改这张图像...",
-      "downloadImage": "下载图像",
-      "promptLabel": "提示词",
-      "promptPlaceholder": "描述你想如何修改这张图像...",
-      "enterHint": "按 Enter 键生成",
-      "charCount": "{count}/{max}",
-      "suggestionsTitle": "提示词建议",
-      "suggestions": {
-        "portrait": "专业肖像摄影，柔和光线，景深虚化，8K细节",
-        "architecture": "现代建筑摄影，黄金时刻，戏剧性光影，建筑细节",
-        "cinematic": "电影级画面，宽屏构图，专业调色，戏剧性光影",
-        "product": "产品渲染，工作室灯光，极简背景，商业摄影",
-        "artistic": "艺术创作，油画质感，印象派风格，细腻笔触"
-      },
-      "reference": {
-        "label": "参考图片",
-        "cta": "点击上传参考图片",
-        "hint": "支持 JPG/PNG，大小不超过 10MB",
-        "replace": "重新上传",
-        "remove": "移除",
-        "previewAlt": "参考图片预览"
-      },
-      "errors": {
-        "invalidFileType": "请上传有效的图片文件。",
-        "fileTooLarge": "图片大小需小于 10MB。",
-        "uploadFailed": "图片上传失败，请稍后重试。",
-        "missingReferenceImage": "请先上传参考图片。"
-      },
-      "settings": {
-        "title": "设置",
-        "resolution": "输出尺寸",
-        "watermark": "水印",
-        "adaptiveSize": "与参考图像保持一致"
-      },
-      "generate": {
-        "button": "生成",
-        "loading": "生成中...",
-        "cost": "{amount} 积分"
-      },
-      "gallery": {
-        "title": "演示图集",
-        "autoplayPause": "暂停自动播放",
-        "autoplayStart": "开始自动播放",
-        "usePromptHint": "点击使用该提示词",
-        "presetBadge": "预设示例",
-        "userBadge": "你的生成结果",
-        "generating": "正在生成图像...",
-        "noImageAvailable": "暂无图像",
-        "empty": "还没有生成图像",
-        "sourceImage": "参考图片"
-      }
-    },
-    "video": {
-      "title": "视频生成",
-      "description": "将文本或图像转换为精彩的视频。",
-      "placeholder": "描述你想要生成的视频...",
-      "downloadVideo": "下载视频",
-      "processing": "视频处理中...",
-      "configuration": "配置面板",
-      "generationMode": "生成模式",
-      "modes": {
-        "text": "文本转视频",
-        "image": "图像转视频"
-      },
-      "text": {
-        "descriptionLabel": "视频描述",
-        "quickPromptsLabel": "快速提示：",
-        "prompt1": "群山日落与流动的云彩",
-        "prompt2": "海浪冲击海岸",
-        "prompt3": "霓虹灯下的夜晚街道",
-        "prompt4": "微风吹过的森林"
-      },
-      "imageUpload": {
-        "label": "参考图像",
-        "cta": "点击上传图像",
-        "limit": "支持 JPG、PNG，最大 10MB",
-        "motionLabel": "运动描述（可选）",
-        "motionPlaceholder": "描述你希望出现的运动效果..."
-      },
-      "advanced": {
-        "toggle": "高级设置",
-        "resolution": "分辨率",
-        "resolutionOptions": {
-          "480p": "480p - 标清",
-          "720p": "720p - 高清",
-          "1080p": "1080p - 全高清"
-        },
-        "durationLabel": "时长：{seconds} 秒",
-        "rangeStart": "3 秒",
-        "rangeEnd": "10 秒",
-        "watermark": "添加水印"
-      },
-      "generate": {
-        "loading": "生成中...",
-        "button": "生成视频（{amount} 积分）"
-      },
-      "gallery": {
-        "title": "演示视频",
-        "autoplayPause": "暂停自动播放",
-        "autoplayStart": "开始自动播放",
-        "usePromptHint": "点击使用该提示词",
-        "presetBadge": "预设示例",
-        "userBadge": "你的生成结果",
-        "fullscreen": "全屏",
-        "download": "下载",
-        "processing": "视频处理中...",
-        "failed": "视频生成失败",
-        "empty": "还没有生成视频"
-      }
-    }
-  },
   "Admin": {
     "sidebar": {
       "title": "管理后台",
@@ -574,7 +399,6 @@
       "activeUsers": "活跃用户",
       "totalRevenue": "总收入",
       "totalPayments": "总支付数",
-      "totalChats": "总对话数",
       "creditsUsed": "已消耗积分",
       "recentUsers": "最近注册用户",
       "recentPayments": "最近支付记录",
@@ -900,26 +724,13 @@
   },
   "contact": {
     "title": "联系我们",
-    "subtitle": "我们很乐意倾听您的声音。给我们发送消息，我们会尽快回复。",
+    "subtitle": "有任何问题或建议，欢迎发邮件给我们，我们会尽快回复。",
     "description": "请联系我们，我们会以光速回复您。",
     "testimonial": {
       "title": "Sistine AI 被数千名用户使用",
       "description": "在众多 AI 应用中，Sistine AI 以其顶级的 AI 能力脱颖而出。"
     },
-    "form": {
-      "nameLabel": "姓名",
-      "namePlaceholder": "张三",
-      "emailLabel": "邮箱地址",
-      "emailPlaceholder": "hello@example.com",
-      "companyLabel": "公司",
-      "companyPlaceholder": "某某科技有限公司",
-      "messageLabel": "消息",
-      "messagePlaceholder": "请在此处输入您的消息",
-      "submitButton": "提交",
-      "submitting": "发送中...",
-      "submitSuccess": "消息发送成功！",
-      "submitError": "消息发送失败，请重试。"
-    }
+    "emailLabel": "发邮件给我们："
   },
   "blog": {
     "title": "博客",
@@ -977,8 +788,7 @@
     "product": {
       "title": "产品",
       "features": "功能",
-      "pricing": "定价",
-      "documentation": "文档"
+      "pricing": "定价"
     },
     "company": {
       "title": "公司",
@@ -997,12 +807,6 @@
       "twitter": "Twitter",
       "linkedin": "领英",
       "github": "GitHub"
-    },
-    "newsletter": {
-      "title": "订阅邮件",
-      "description": "获取最新动态和资讯，直接发送到您的邮箱。",
-      "placeholder": "输入您的邮箱",
-      "subscribe": "订阅"
     }
   }
 }

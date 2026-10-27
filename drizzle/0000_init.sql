@@ -23,6 +23,15 @@ CREATE TABLE "credit_ledger" (
 	"created_at" timestamp DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
+CREATE TABLE "password_reset_token" (
+	"id" text PRIMARY KEY NOT NULL,
+	"user_id" text NOT NULL,
+	"token" text NOT NULL,
+	"expires_at" timestamp NOT NULL,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "password_reset_token_token_unique" UNIQUE("token")
+);
+--> statement-breakpoint
 CREATE TABLE "payment" (
 	"id" text PRIMARY KEY NOT NULL,
 	"provider" varchar(32) DEFAULT 'creem' NOT NULL,
@@ -65,6 +74,21 @@ CREATE TABLE "subscription" (
 	CONSTRAINT "subscription_provider_sub_id_unique" UNIQUE("provider_sub_id")
 );
 --> statement-breakpoint
+CREATE TABLE "subscription_credit_schedule" (
+	"id" text PRIMARY KEY NOT NULL,
+	"subscription_id" text NOT NULL,
+	"user_id" text NOT NULL,
+	"plan_key" varchar(64) NOT NULL,
+	"credits_per_grant" integer NOT NULL,
+	"interval_months" integer NOT NULL,
+	"grants_remaining" integer NOT NULL,
+	"total_credits_remaining" integer NOT NULL,
+	"next_grant_at" timestamp NOT NULL,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"updated_at" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "subscription_credit_schedule_subscription_id_unique" UNIQUE("subscription_id")
+);
+--> statement-breakpoint
 CREATE TABLE "user" (
 	"id" text PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
@@ -72,6 +96,11 @@ CREATE TABLE "user" (
 	"email_verified" boolean DEFAULT false NOT NULL,
 	"image" text,
 	"credits" integer DEFAULT 0 NOT NULL,
+	"role" text DEFAULT 'user' NOT NULL,
+	"plan_key" text DEFAULT 'free',
+	"banned" boolean DEFAULT false NOT NULL,
+	"ban_reason" text,
+	"ban_expires" timestamp,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL,
 	CONSTRAINT "user_email_unique" UNIQUE("email")
@@ -88,6 +117,10 @@ CREATE TABLE "verification" (
 --> statement-breakpoint
 ALTER TABLE "account" ADD CONSTRAINT "account_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "credit_ledger" ADD CONSTRAINT "credit_ledger_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "password_reset_token" ADD CONSTRAINT "password_reset_token_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "payment" ADD CONSTRAINT "payment_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "session" ADD CONSTRAINT "session_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "subscription" ADD CONSTRAINT "subscription_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;
+ALTER TABLE "subscription" ADD CONSTRAINT "subscription_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "subscription_credit_schedule" ADD CONSTRAINT "subscription_credit_schedule_subscription_id_subscription_id_fk" FOREIGN KEY ("subscription_id") REFERENCES "public"."subscription"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "subscription_credit_schedule" ADD CONSTRAINT "subscription_credit_schedule_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+CREATE INDEX "subscription_credit_schedule_next_grant_idx" ON "subscription_credit_schedule" USING btree ("next_grant_at");

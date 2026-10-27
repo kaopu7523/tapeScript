@@ -138,46 +138,6 @@ export const subscriptionCreditSchedule = pgTable(
   }),
 );
 
-// Chat sessions
-export const chatSession = pgTable("chat_session", {
-  id: text("id").primaryKey(),
-  userId: text("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
-  title: text("title"),
-  model: varchar("model", { length: 48 }).default("doubao-1-5-thinking-pro-250415").notNull(),
-  totalMessages: integer("total_messages").default(0).notNull(),
-  totalCreditsUsed: integer("total_credits_used").default(0).notNull(),
-  lastMessageAt: timestamp("last_message_at"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().$onUpdate(() => new Date()).notNull(),
-});
-
-// Chat messages
-export const chatMessage = pgTable("chat_message", {
-  id: text("id").primaryKey(),
-  sessionId: text("session_id").notNull().references(() => chatSession.id, { onDelete: "cascade" }),
-  role: varchar("role", { length: 16 }).notNull(), // 'user' | 'assistant' | 'system'
-  content: text("content").notNull(),
-  creditsUsed: integer("credits_used").default(0).notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-});
-
-// Generation history for images and videos
-export const generationHistory = pgTable("generation_history", {
-  id: text("id").primaryKey(),
-  userId: text("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
-  type: varchar("type", { length: 16 }).notNull(), // 'image' | 'video'
-  prompt: text("prompt").notNull(),
-  imageUrl: text("image_url"), // For image-to-video generation
-  resultUrl: text("result_url"), // Final result URL
-  taskId: text("task_id"), // For async video generation tracking
-  status: varchar("status", { length: 16 }).notNull().default("pending"), // pending, processing, completed, failed
-  creditsUsed: integer("credits_used").default(0).notNull(),
-  metadata: text("metadata"), // JSON string for additional data
-  error: text("error"), // Error message if failed
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().$onUpdate(() => new Date()).notNull(),
-});
-
 // Password reset tokens
 export const passwordResetToken = pgTable("password_reset_token", {
   id: text("id").primaryKey(),
@@ -185,16 +145,4 @@ export const passwordResetToken = pgTable("password_reset_token", {
   token: text("token").notNull().unique(),
   expiresAt: timestamp("expires_at").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
-});
-
-// Newsletter subscriptions
-export const newsletterSubscription = pgTable("newsletter_subscription", {
-  id: text("id").primaryKey(),
-  email: text("email").notNull().unique(),
-  userId: text("user_id").references(() => user.id, { onDelete: "set null" }),
-  status: varchar("status", { length: 16 }).notNull().default("active"), // active, unsubscribed
-  unsubscribeToken: text("unsubscribe_token").notNull().unique(),
-  subscribedAt: timestamp("subscribed_at").defaultNow().notNull(),
-  unsubscribedAt: timestamp("unsubscribed_at"),
-  updatedAt: timestamp("updated_at").defaultNow().$onUpdate(() => new Date()).notNull(),
 });

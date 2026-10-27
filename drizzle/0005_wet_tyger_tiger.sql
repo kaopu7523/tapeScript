@@ -1,1 +1,0 @@
-ALTER TABLE "chat_session" ALTER COLUMN "model" SET DEFAULT 'doubao-1.5-thinking-pro';

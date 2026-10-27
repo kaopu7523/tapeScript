@@ -5,7 +5,6 @@ import {
   Users,
   CreditCard,
   TrendingUp,
-  MessageSquare,
   Database,
   Activity
 } from "lucide-react";
@@ -38,7 +37,6 @@ interface AdminDashboardProps {
     activeUsers: number;
     totalPayments: number;
     totalRevenue: number;
-    totalChats: number;
     totalCreditsUsed: number;
   };
   recentUsers: AdminRecentUser[];
@@ -77,13 +75,6 @@ export function AdminDashboard({ stats, recentUsers, recentPayments }: AdminDash
       icon: TrendingUp,
       color: "bg-muted",
       link: `/admin/subscriptions`
-    },
-    {
-      title: t("totalChats"),
-      value: stats.totalChats.toLocaleString(),
-      icon: MessageSquare,
-      color: "bg-muted",
-      link: `/admin/credits`
     },
     {
       title: t("creditsUsed"),

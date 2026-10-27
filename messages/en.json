@@ -39,12 +39,7 @@
       "pricing": "Pricing",
       "blog": "Blog",
       "contact": "Contact",
-      "docs": "Docs",
       "dashboard": "Dashboard",
-      "demo": "Demo",
-      "chat": "Chat",
-      "image": "Image",
-      "video": "Video",
       "credits": "Credits",
       "profile": "Profile",
       "settings": "Settings"
@@ -384,176 +379,6 @@
       "signOutLink": "Sign out and try a different account"
     }
   },
-  "demo": {
-    "badge": "Try Before You Buy",
-    "title": "Experience Sistine AI",
-    "description": "Test our powerful AI features without signing up. Get 3 free trials to explore what we can do.",
-    "limitReached": "You've reached the demo limit. Sign up to continue using our AI tools with full features!",
-    "signUpNow": "Sign Up Now",
-    "tryNow": "Try Now",
-    "backToFeatures": "Back to Features",
-    "send": "Send",
-    "generate": "Generate",
-    "usageInfo": "{used}/{max} trials used",
-    "demoNote": "This is a demo preview. Real results are much better!",
-    "responses": {
-      "chat": "This is a demo response for: \"{query}\". In the full version, you'll get intelligent AI responses powered by advanced language models."
-    },
-    "features": {
-      "chat": {
-        "title": "AI Chat Assistant",
-        "description": "Have intelligent conversations with our AI. Ask questions, get help, or just chat!",
-        "placeholder": "Start a conversation...",
-        "inputPlaceholder": "Type your message..."
-      },
-      "image": {
-        "title": "AI Image Generation",
-        "description": "Create stunning images from text descriptions using state-of-the-art AI models.",
-        "inputPlaceholder": "Describe the image you want to create..."
-      },
-      "video": {
-        "title": "AI Video Creation",
-        "description": "Generate professional videos from text prompts with our advanced AI technology.",
-        "inputPlaceholder": "Describe the video you want to create..."
-      }
-    },
-    "cta": {
-      "title": "Ready for the Full Experience?",
-      "description": "Unlock unlimited AI generations, premium features, and priority support.",
-      "signUp": "Start Free Trial",
-      "viewPricing": "View Pricing"
-    },
-    "subtitle": "Explore the real product demos without logging in.",
-    "credits": "Credits",
-    "backToDashboard": "Back to Dashboard",
-    "insufficientCredits": "Insufficient credits",
-    "startChat": "Start a conversation",
-    "startChatDescription": "Ask anything to explore what our assistants can do.",
-    "sendHint": "Press Enter to send",
-    "tabs": {
-      "chat": "Chat",
-      "image": "Image",
-      "video": "Video"
-    },
-    "chat": {
-      "title": "AI Chat Playground",
-      "description": "Try streaming responses from our chat assistant.",
-      "placeholder": "Type your message..."
-    },
-    "image": {
-      "title": "Image Generation",
-      "description": "Upload a reference image and describe the edits you want to preview.",
-      "placeholder": "Describe how you want to transform this image...",
-      "downloadImage": "Download image",
-      "promptLabel": "Prompt",
-      "promptPlaceholder": "Describe how you want to transform this image...",
-      "enterHint": "Press Enter to generate",
-      "charCount": "{count}/{max}",
-      "suggestionsTitle": "Suggestions",
-      "suggestions": {
-        "portrait": "Professional portrait photography, soft lighting, shallow depth of field, 8K details",
-        "architecture": "Modern architecture photography, golden hour, dramatic lighting, architectural details",
-        "cinematic": "Cinematic shot, widescreen composition, professional color grading, dramatic lighting",
-        "product": "Product render, studio lighting, minimalist background, commercial photography",
-        "artistic": "Artistic creation, oil painting texture, impressionist style, fine brushwork"
-      },
-      "reference": {
-        "label": "Reference Image",
-        "cta": "Click to upload a reference image",
-        "hint": "JPG or PNG up to 10MB",
-        "replace": "Replace",
-        "remove": "Remove",
-        "previewAlt": "Reference image preview"
-      },
-      "errors": {
-        "invalidFileType": "Please upload a valid image file.",
-        "fileTooLarge": "Image must be smaller than 10MB.",
-        "uploadFailed": "Failed to upload image. Please try again.",
-        "missingReferenceImage": "Please upload a reference image to continue."
-      },
-      "settings": {
-        "title": "Settings",
-        "resolution": "Resolution",
-        "watermark": "Watermark",
-        "adaptiveSize": "Matches your reference image"
-      },
-      "generate": {
-        "button": "Generate",
-        "loading": "Generating...",
-        "cost": "{amount} credits"
-      },
-      "gallery": {
-        "title": "Demo Images",
-        "autoplayPause": "Pause autoplay",
-        "autoplayStart": "Start autoplay",
-        "usePromptHint": "Click to use this prompt",
-        "presetBadge": "Preset Example",
-        "userBadge": "Your Generation",
-        "generating": "Generating image...",
-        "noImageAvailable": "No image available",
-        "empty": "No images generated yet",
-        "sourceImage": "Source image"
-      }
-    },
-    "video": {
-      "title": "Video Generation",
-      "description": "Transform text or images into stunning videos.",
-      "placeholder": "Describe the video you want to create...",
-      "downloadVideo": "Download video",
-      "processing": "Processing video...",
-      "configuration": "Configuration",
-      "generationMode": "Generation Mode",
-      "modes": {
-        "text": "Text to Video",
-        "image": "Image to Video"
-      },
-      "text": {
-        "descriptionLabel": "Video Description",
-        "quickPromptsLabel": "Quick prompts:",
-        "prompt1": "Sunset over mountains with moving clouds",
-        "prompt2": "Ocean waves crashing on beach",
-        "prompt3": "City street at night with neon lights",
-        "prompt4": "Forest with gentle wind through trees"
-      },
-      "imageUpload": {
-        "label": "Source Image",
-        "cta": "Click to upload image",
-        "limit": "JPG, PNG up to 10MB",
-        "motionLabel": "Motion Description (Optional)",
-        "motionPlaceholder": "Describe the motion you want..."
-      },
-      "advanced": {
-        "toggle": "Advanced Settings",
-        "resolution": "Resolution",
-        "resolutionOptions": {
-          "480p": "480p - Standard",
-          "720p": "720p - HD",
-          "1080p": "1080p - Full HD"
-        },
-        "durationLabel": "Duration: {seconds} seconds",
-        "rangeStart": "3s",
-        "rangeEnd": "10s",
-        "watermark": "Add watermark"
-      },
-      "generate": {
-        "loading": "Generating...",
-        "button": "Generate Video ({amount} Credits)"
-      },
-      "gallery": {
-        "title": "Demo Videos",
-        "autoplayPause": "Pause autoplay",
-        "autoplayStart": "Start autoplay",
-        "usePromptHint": "Click to use this prompt",
-        "presetBadge": "Preset Example",
-        "userBadge": "Your Generation",
-        "fullscreen": "Fullscreen",
-        "download": "Download",
-        "processing": "Processing video...",
-        "failed": "Video generation failed",
-        "empty": "No videos generated yet"
-      }
-    }
-  },
   "Admin": {
     "sidebar": {
       "title": "Admin Panel",
@@ -574,7 +399,6 @@
       "activeUsers": "Active Users",
       "totalRevenue": "Total Revenue",
       "totalPayments": "Total Payments",
-      "totalChats": "Total Chats",
       "creditsUsed": "Credits Used",
       "recentUsers": "Recent Users",
       "recentPayments": "Recent Payments",
@@ -901,26 +725,13 @@
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "subtitle": "We'd love to hear from you. Email us and we'll respond as soon as possible.",
     "description": "Please reach out to us and we will get back to you at the speed of light.",
     "testimonial": {
       "title": "Sistine AI is used by thousands of users",
       "description": "With lots of AI applications around, Sistine AI stands out with its state of the art AI capabilities."
     },
-    "form": {
-      "nameLabel": "Full Name",
-      "namePlaceholder": "John Doe",
-      "emailLabel": "Email address",
-      "emailPlaceholder": "hello@johndoe.com",
-      "companyLabel": "Company",
-      "companyPlaceholder": "Your Company",
-      "messageLabel": "Message",
-      "messagePlaceholder": "Enter your message here",
-      "submitButton": "Submit",
-      "submitting": "Sending...",
-      "submitSuccess": "Message sent successfully!",
-      "submitError": "Failed to send message. Please try again."
-    }
+    "emailLabel": "Email us at"
   },
   "blog": {
     "title": "Blog",
@@ -978,8 +789,7 @@
     "product": {
       "title": "Product",
       "features": "Features",
-      "pricing": "Pricing",
-      "documentation": "Documentation"
+      "pricing": "Pricing"
     },
     "company": {
       "title": "Company",
@@ -998,12 +808,6 @@
       "twitter": "Twitter",
       "linkedin": "LinkedIn",
       "github": "GitHub"
-    },
-    "newsletter": {
-      "title": "Subscribe to Newsletter",
-      "description": "Get the latest updates and news directly in your inbox.",
-      "placeholder": "Enter your email",
-      "subscribe": "Subscribe"
     }
   }
 }

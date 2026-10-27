@@ -8,7 +8,7 @@ export const analyticsConfig = {
 };
 
 export const websiteConfig = {
-  appName: "Sistine AI",
-  docsName: "Sistine Docs",
+  appName: "TapeScript",
+  supportEmail: "support@tapescript.app",
   appUrl: (process.env.NEXT_PUBLIC_APP_URL || DEFAULT_APP_URL).trim(),
 };
